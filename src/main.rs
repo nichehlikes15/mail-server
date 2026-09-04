@@ -88,12 +88,12 @@ async fn auth_google(Query(params): Query<CallbackQuery>) -> Result<Redirect, St
 
     let client = Client::new();
 
-    let client_id =
-        std::env::var("GOOGLE_CLIENT_ID").expect("GOOGLE_CLIENT_ID missing");
+    let client_id = std::env::var("GOOGLE_CLIENT_ID").expect("GOOGLE_CLIENT_ID missing");
 
-    let client_secret = std::env::var("GOOGLE_CLIENT_SECRET")
-        .expect("GOOGLE_CLIENT_SECRET missing");
+    let client_secret = std::env::var("GOOGLE_CLIENT_SECRET").expect("GOOGLE_CLIENT_SECRET missing");
 
+
+    let redirect_uri = "http://0.0.0.0:3000/auth/google";
 
 
     println!("Sending Token To Google");
