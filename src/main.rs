@@ -12,7 +12,7 @@ use tokio::net::TcpListener;
 #[derive(Deserialize)]
 struct CallbackQuery {
     code: Option<String>,
-    error: Option<String>
+    //error: Option<String>
 }
 
 #[derive(Deserialize, Debug)]
