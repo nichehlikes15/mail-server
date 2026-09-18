@@ -65,6 +65,11 @@ async fn exchange_code(
 
     let client = Client::new();
 
+    println!(
+        "Exchanging code for token: code={}, redirect_uri={}, code_verifier={}",
+        request.code, request.redirect_uri, request.code_verifier
+    );
+
     let response = client
         .post("https://oauth2.googleapis.com/token")
         .form(&[
@@ -106,6 +111,11 @@ async fn refresh_token(
         .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
 
     let client = Client::new();
+
+    println!(
+        "Refreshing token: refresh_token={}",
+        request.refresh_token
+    );
 
     let response = client
         .post("https://oauth2.googleapis.com/token")
