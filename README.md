@@ -1,2 +1,2 @@
-# gitpro-server
-The webserver used for gitpro, hosted on railway
+# mailbox-server
+The webserver used for [mailbox](https://github.com/nichehlikes15/mail), hosted on railway
